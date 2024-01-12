@@ -306,6 +306,7 @@ export function Provider({children}: React.PropsWithChildren<{}>) {
       )
 
       __globalAgent = agent
+      window.agent = agent
       queryClient.clear()
       upsertAccount(account)
 
@@ -359,6 +360,7 @@ export function Provider({children}: React.PropsWithChildren<{}>) {
           {networkErrorCallback: clearCurrentAccount},
         ),
       })
+      window.agent = agent
 
       let canReusePrevSession = false
       try {
